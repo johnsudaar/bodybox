@@ -1,0 +1,22 @@
+%h1 Listing plats
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Ingredients
+      %th
+      %th
+      %th
+
+  %tbody
+    - @plats.each do |plat|
+      %tr
+        %td= plat.nom
+        %td
+          - plat.ingredients.each do |ingredient|
+            = ingredient.nom+","
+
+%br
+
+= link_to 'New Plat', new_plat_path
