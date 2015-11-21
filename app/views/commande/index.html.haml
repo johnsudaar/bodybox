@@ -1,6 +1,6 @@
 = render :partial => 'nav'
 .container.principal
-  = render :partial => 'menu', locals: {:etape => 3}
+  = render :partial => 'menu', locals: {:etape => 0}
 
   .row#box-select
     .col-xs-12.col-md-4.box-type{"data-size" => "250"}
@@ -8,14 +8,14 @@
       .h3.small-box-description
         Petite box (250g)
 
-    .col-xs-12.col-md-4.box-type{"data-size" => "650"}
+    .col-xs-12.col-md-4.box-type{"data-size" => "400"}
       = image_tag("Bodybox-box.png", :class => "medium-box center-block")
       .h3.medium-box-description
-        Moyenne box(650g)
-    .col-xs-12.col-md-4.box-type{"data-size" => "800"}
+        Moyenne box (400g)
+    .col-xs-12.col-md-4.box-type{"data-size" => "500"}
       = image_tag("Bodybox-box.png", :class => "big-box center-block")
       .h3.big-box-description
-        Grande box(800g)
+        Grande box (500g)
   #value-select
     %h2.oswald Choisis ta répartition :
     %br
@@ -41,21 +41,26 @@
       .progress-bar.progress-bar-warning#glucides-pb{:style => "width: 33%"}
       .progress-bar.progress-bar-success#legumes-pb{:style => "width: 34%"}
     .row
-      #proteines-group
+      #proteines-group.text-align-center
         .col-md-2.col-xs-12
           .v-center Proteines :
         .col-md-10.col-xs-12
           .slider#proteines-slider
+        %br
         #show-glucides.btn.btn-default
           Valider
-      #glucides-group
+      #glucides-group.text-align-center
         .col-md-2.col-xs-12
           .v-center Glucides :
         .col-md-10.col-xs-12
           .slider#glucides-slider
         %br
-        .row
+        #nb-meals-btn.btn.btn-default
+          Valider
+      #nb-meals
+        .row.form-meal-container
           = form_tag(controller: "commande",action: "choisir", method:"get") do
+            = check_box_tag "nbmeals", "yes",false, :class => "toggle-button"
             = hidden_field_tag("commande[proteines]", {:id => "proteines-form"})
             = hidden_field_tag("commande[glucides]")
             = hidden_field_tag("commande[legumes]")

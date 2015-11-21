@@ -13,9 +13,23 @@ update_graph = (proteines, glucides, legumes, size) ->
   $("#legumes-pb").width(legumes_prc+"%")
   $("#proteines-pb").width(proteines_prc+"%")
   $("#glucides-pb").width(glucides_prc+"%")
+
 $ ->
+  $("#nb-meals-btn").click ->
+    $(".toggle-button").bootstrapSwitch
+      onText: "Deux repas"
+      offText: "Trois repas"
+      handleWidth: 100
+      wrapperClass: "toggle-button-wrapper"
+    sGlucides = document.getElementById('glucides-slider')
+    sGlucides.setAttribute 'disabled', true
+    $("#nb-meals-btn").addClass("hide")
+    $("#nb-meals").slideToggle 'slow', ->
+
   $("#value-select").slideToggle 0 , ->
   $("#glucides-group").slideToggle 0 , ->
+  $("#nb-meals").slideToggle 0 , ->
+
   $(".box-type").click ->
     size = Math.floor($(this).attr "data-size")
     maxProteines = Math.floor(size / 30) * 10

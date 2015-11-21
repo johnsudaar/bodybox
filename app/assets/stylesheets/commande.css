@@ -65,3 +65,16 @@
 .principal {
   margin-bottom: 50px;
 }
+
+.form-meal-container{
+  text-align: center;
+}
+
+.bootstrap-switch-toggle-button-wrapper{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.text-align-center{
+  text-align: center;
+}

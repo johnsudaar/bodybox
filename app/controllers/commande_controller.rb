@@ -6,7 +6,12 @@ class CommandeController < ApplicationController
     @session[:proteines_value] = params["commande"]["proteines"]
     @session[:glucides_value] = params["commande"]["glucides"]
     @session[:legumes_value] = params["commande"]["legumes"]
-
+    puts params["nbmeals"]
+    if params["nbmeals"] == "yes"
+      @session[:nb_meals] = 2
+    else
+      @session[:nb_meals] = 3
+    end
     @ingredients = Ingredient.all.group_by(&:categorie)
   end
 
@@ -17,10 +22,6 @@ class CommandeController < ApplicationController
       ingredients << ingredient.to_i
     end
 
-    puts(ingredients)
     @plats = Plat.get_all_by_ingredients(ingredients)
-
-    puts("=========================================================================")
-    puts(@plats)
   end
 end
