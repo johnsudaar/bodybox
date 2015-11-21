@@ -1,10 +1,35 @@
-.video-wrapper{
-  height:100vh;
-  width:100vw;
-  overflow:hidden;
+.video-wrapper {
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-video{
-  min-height: 100%;
-  min-width: 100%;
+video {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.boutons {
+	position: relative;
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+.wrapp {
+	position: relative;
+	color: white;
+	text-align: center;
+	padding-top: 50px;
+}
+
+.logo {
+	font-size: 70px;
+}
+
+.slogan {
+	margin-top: 0px;
 }
