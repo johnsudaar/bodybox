@@ -22,7 +22,7 @@
             = ingredient.nom
 
       .col-xs-12.col-md-4
-        %h2.text-center.oswald Légumes
+        %h2.text-center.oswald Fruits et légumes
         - @ingredients['legumes'].each do | ingredient |
           .checkbox.checkbox-success
             = check_box_tag("ingredients[#{ingredient.id}]")
