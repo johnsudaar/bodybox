@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @plat.name
+%p
+  %b Ingredient:
+  = @plat.ingredient
+
+= link_to 'Edit', edit_plat_path(@plat)
+\|
+= link_to 'Back', plats_path

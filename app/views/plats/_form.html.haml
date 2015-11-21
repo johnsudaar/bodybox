@@ -1,0 +1,16 @@
+= form_for @plat do |f|
+  - if @plat.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@plat.errors.count, "error")} prohibited this plat from being saved:"
+      %ul
+        - @plat.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :ingredient
+    = f.text_field :ingredient
+  .actions
+    = f.submit 'Save'
