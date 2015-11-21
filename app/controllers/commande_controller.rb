@@ -34,7 +34,7 @@ class CommandeController < ApplicationController
     while all.count < nb_meals
       id = rng.rand(plats.count)
       if ! taken.include?(id)
-        all << plats[id]
+        all << {plat: plats[id], ingredients: plats[id].ingredients}
         taken << id
       end
       if taken.count >= plats.count

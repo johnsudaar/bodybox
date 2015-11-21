@@ -2,5 +2,33 @@
 .container.principal
   = render :partial => 'menu', locals: {:etape => 2}
 
-  - @plats.each do | plat |
-    = plat.nom
+  #plats
+
+  .actions-plats
+    %a.btn.btn-default#generer Trouver d'autres plats
+    %a.btn.btn-success{:href => "#"} Valider ces plats
+  
+
+:javascript
+  $(chercherPlats);
+  $("#generer").click(chercherPlats);
+  function chercherPlats() {
+    $.getJSON("/commande/plats", function( data ) {
+        $("#plats").html("");
+        $.each( data, function( key, val ) {
+          if (data.length == 3) {
+            $("#plats").append('<div class="col-sx-12 col-md-4">' +
+                              '<div class="photo-plat" style="background-image: url(\'/plats/'+val.plat.id+'.jpg\');"></div>'+
+                              '<h3 class="oswald nom-plat">'+val.plat.nom+'</h3>'+
+                              '</div>');
+          }
+          else {
+            $("#plats").append('<div class="col-sx-12 col-md-6">' +
+                              '<div class="photo-plat" style="background-image: url(\'/plats/'+val.plat.id+'.jpg\');"></div>'+
+                              '<h3 class="oswald nom-plat">'+val.plat.nom+'</h3>'+
+                              '</div>');
+          }
+        });
+       
+    });
+  }

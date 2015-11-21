@@ -66,15 +66,32 @@
   margin-bottom: 50px;
 }
 
-.form-meal-container{
+.form-meal-container {
   text-align: center;
 }
 
-.bootstrap-switch-toggle-button-wrapper{
+.bootstrap-switch-toggle-button-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.text-align-center{
+.text-align-center {
   text-align: center;
+}
+
+.photo-plat {
+  height: 300px;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.nom-plat {
+  text-align: center;
+}
+
+.actions-plats {
+  text-align: center;
+} 
+.actions-plats .btn{
+  margin-top: 20px;
 }

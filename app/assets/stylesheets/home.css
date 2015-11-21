@@ -17,6 +17,11 @@ video {
 	float: right;
 	margin-top: 10px;
 	margin-right: 10px;
+  z-index: 1000;
+}
+
+.boutons .btn-success{
+  color: white;
 }
 
 .wrapp {
@@ -55,6 +60,18 @@ video {
 .liens li {
   padding-left: 25px;
   padding-right: 25px;
+  color: white;
+}
+
+.liens li a:visited {
+  color: white;
+}
+
+.liens li a:hover {
+  text-decoration: none;
+  background: none;
+  color: white;
+  text-decoration: underline;
 }
 
 .oswald {
