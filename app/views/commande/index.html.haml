@@ -21,40 +21,40 @@
     .row
       .col-md-4.col-xs-12
         %h4
-          Legumes :
-          %span#legumes-value
-            NAg
+          Proteines :
+          %span#proteines-value
+            0g
       .col-md-4.col-xs-12
         %h4
           Glucides :
           %span#glucides-value
-            NAg
+            0g
       .col-md-4.col-xs-12
         %h4
-          Proteines :
-          %span#proteines-value
-            NAg
+          Legumes :
+          %span#legumes-value
+            0g
     %br
     .progress
-      .progress-bar.progress-bar-success#legumes-pb{:style => "width: 33%"}
+      .progress-bar.progress-bar-success#proteines-pb{:style => "width: 33%"}
       .progress-bar.progress-bar-warning#glucides-pb{:style => "width: 33%"}
-      .progress-bar.progress-bar-info#proteines-pb{:style => "width: 34%"}
+      .progress-bar.progress-bar-info#legumes-pb{:style => "width: 34%"}
     .row
-      .col-md-2.col-xs-12
-        .v-center Legumes :
-      .col-md-10.col-xs-12
-        .slider#legumes-slider
-      .col-md-2.col-xs-12
-        .v-center Glucides :
-      .col-md-10.col-xs-12
-        .slider#glucides-slider
-      .col-md-2.col-xs-12
-        .v-center Proteines :
-      .col-md-10.col-xs-12
-        .slider#proteines-slider
-    %br
-    / .row
-    /   - form_tag(controller: "commande",action: "menu", method:"post") do
-    /     = hidden_field_tag("commande[proteines]")
-    /     %input.btn.btn-default.btn-primary.col-sm-12.col-md-4.col-md-offset-4{:type => "submit"}
-    /       Valider
+      #proteines-group
+        .col-md-2.col-xs-12
+          .v-center Proteines :
+        .col-md-10.col-xs-12
+          .slider#proteines-slider
+        #show-glucides.btn.btn-default
+          Valider
+      #glucides-group
+        .col-md-2.col-xs-12
+          .v-center Glucides :
+        .col-md-10.col-xs-12
+          .slider#glucides-slider
+        %br
+        .row
+          / - form_tag(controller: "commande",action: "menu", method:"post") do
+          /   = hidden_field_tag("commande[proteines]")
+          /   %input.btn.btn-default.btn-primary.col-sm-12.col-md-4.col-md-offset-4{:type => "submit"}
+          /     Valider
