@@ -1,0 +1,32 @@
+.container
+  = render :partial => 'menu', locals: {:etape => 3}
+
+  .row
+    .col-xs-12.col-md-4
+      %a{:href => "#"}
+        = image_tag("box.png", :class => "small-box center-block")
+      .p.small-box-description
+        Petite box
+      .small-slider
+
+    .col-xs-12.col-md-4
+      %a{:href => "#"}
+        = image_tag("box.png", :class => "medium-box center-block")
+      .p.medium-box-description
+        Moyenne box
+    .col-xs-12.col-md-4
+      %a{:href => "#"}
+        = image_tag("box.png", :class => "big-box center-block")
+      .p.big-box-description
+        Grande box
+
+:javascript
+
+  $(".small-slider").noUiSlider({
+      step: 10,
+      range: {
+        'min': 0,
+        'max': 300
+      },
+      start: [20, 90]
+  });
