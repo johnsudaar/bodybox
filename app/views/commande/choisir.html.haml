@@ -11,7 +11,6 @@
             = check_box_tag("ingredients[#{ingredient.id}]")
             %label{:for => "#{ingredient.id}"}
             = ingredient.nom
-         
 
       .col-xs-12.col-md-4
         %h2.text-center.oswald.categorie-proteines Protéines
@@ -20,7 +19,6 @@
             = check_box_tag("ingredients[#{ingredient.id}]")
             %label{:for => "#{ingredient.id}"}
             = ingredient.nom
-
       .col-xs-12.col-md-4
         %h2.text-center.oswald.categorie-legumes Fruits et légumes
         - @ingredients['legumes'].each do | ingredient |

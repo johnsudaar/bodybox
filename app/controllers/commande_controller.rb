@@ -21,7 +21,26 @@ class CommandeController < ApplicationController
     params['ingredients'].each do | ingredient, _ |
       ingredients << ingredient.to_i
     end
-
+    @session[:ingredients] = ingredients
     @plats = Plat.get_all_by_ingredients(ingredients)
+  end
+
+  def plats
+    plats = Plat.get_all_by_ingredients(@session["ingredients"])
+    all = []
+    taken = []
+    nb_meals = @session["nb_meals"]
+    rng = Random.new
+    while all.count < nb_meals
+      id = rng.rand(plats.count)
+      if ! taken.include?(id)
+        all << plats[id]
+        taken << id
+      end
+      if taken.count >= plats.count
+        taken = []
+      end
+    end
+    render json: all
   end
 end

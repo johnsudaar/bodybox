@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   get 'commande/' => 'commande#index'
+  get 'commande/plats' => 'commande#plats'
   post 'commande/choisir' => 'commande#choisir'
   post 'commande/menu' => 'commande#menu'
 
