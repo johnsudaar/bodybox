@@ -7,7 +7,7 @@
         = image_tag("box.png", :class => "small-box center-block")
       .p.small-box-description
         Petite box
-      .small-slider
+      #small-slider
 
     .col-xs-12.col-md-4
       %a{:href => "#"}
@@ -22,11 +22,15 @@
 
 :javascript
 
-  $(".small-slider").noUiSlider({
+  $("#small-slider").noUiSlider({
       step: 10,
       range: {
         'min': 0,
         'max': 300
       },
       start: [20, 90]
+  });
+
+  $("#small-slider").noUiSlider.on('slide', function(){
+    console.log("ok");
   });
