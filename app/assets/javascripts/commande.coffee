@@ -105,6 +105,7 @@ $ ->
     $("#show-glucides").click ->
       sGlucides = document.getElementById('glucides-slider')
       sProteines = document.getElementById('proteines-slider')
+      $(".btn-preset").hide()
 
       proteines = sProteines.noUiSlider.get()
 
@@ -137,3 +138,37 @@ $ ->
       sProteines.setAttribute "disabled", true
       $(this).hide()
       $("#glucides-group").slideToggle "slow", ->
+
+
+
+
+first = true
+$ ->
+  $("#relais").slideToggle 0, ->
+  $("#domicile").slideToggle 0, ->
+
+  $("#select_type").bootstrapSwitch
+      onText: "Point relais"
+      offText: "Livraison a domicile"
+      handleWidth: 200
+      wrapperClass: "toggle-button-wrapper"
+
+  $("#btn-relais").click ->
+    if ! first
+      $("#domicile").slideToggle "slow", ->
+        $("#relais").slideToggle "slow", ->
+    else
+      $("#relais").slideToggle "slow", ->
+    $("#btn-relais").addClass "active"
+    $("#btn-domicile").removeClass "active"
+    first = false
+
+  $("#btn-domicile").click ->
+    if ! first
+      $("#relais").slideToggle "slow", ->
+        $("#domicile").slideToggle "slow", ->
+    else
+      $("#domicile").slideToggle "slow", ->
+    $("#btn-domicile").addClass "active"
+    $("#btn-relais").removeClass "active"
+    first = false

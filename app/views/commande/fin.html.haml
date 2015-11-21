@@ -1,0 +1,39 @@
+= render :partial => 'nav'
+.container.principal
+  = render :partial => 'menu', locals: {:etape => 4}
+  %h1 Recapitulatif de la commande
+  Taille de la box :
+  = @session["box_size"]
+  %br
+
+  Proteines :
+  = @session["proteines_value"]
+  %br
+  Glucides :
+  = @session["glucides_value"]
+  %br
+  Legumes :
+  = @session["legumes_value"]
+  %br
+
+  - @plats.each do | plat |
+    %h1=plat.nom
+    Ingredients :
+    %ul
+      - plat.ingredients.each do | ingredient |
+        %li= ingredient.nom
+
+  %h1 Choix de la livraison
+
+  .text-align-center
+    .btn-group
+      .btn.btn-default#btn-relais
+        Point relais
+      .btn.btn-default#btn-domicile
+        Livraison a domincile
+
+  #relais
+    %h1 Relais
+  #domicile
+    %h1 Domicile
+

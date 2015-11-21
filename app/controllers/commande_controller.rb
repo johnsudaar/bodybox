@@ -25,9 +25,14 @@ class CommandeController < ApplicationController
     @plats = Plat.get_all_by_ingredients(ingredients)
   end
 
+  def fin
+    @plats = Plat.find(@session["plats"])
+  end
+
   def plats
     plats = Plat.get_all_by_ingredients(@session["ingredients"])
     all = []
+    user_plats = []
     taken = []
     nb_meals = @session["nb_meals"]
     rng = Random.new
@@ -35,12 +40,14 @@ class CommandeController < ApplicationController
       id = rng.rand(plats.count)
       if ! taken.include?(id)
         all << {plat: plats[id], ingredients: plats[id].ingredients}
+        user_plats << plats[id].id
         taken << id
       end
       if taken.count >= plats.count
         taken = []
       end
     end
+    @session["plats"] = user_plats
     render json: all
   end
 end
