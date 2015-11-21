@@ -1,16 +1,14 @@
-.container
+.container.principal
   = render :partial => 'menu', locals: {:etape => 1}
 
-  
-  //- form_tag(controller: "choisir", action: "menu", method: "post") do
-  %form
+  = form_tag(controller: "commande", action: "menu", method: "post") do
     .row
       .col-xs-12.col-md-4
         %h2.text-center Glucides
         - @ingredients['glucides'].each do | ingredient |
           .checkbox.checkbox-success
-            %input#checkbox1{:type => "checkbox"}/
-            %label{:for => "checkbox1"}
+            = check_box_tag("ingredients[#{ingredient.id}]")
+            %label{:for => "#{ingredient.id}"}
             = ingredient.nom
          
 
@@ -18,16 +16,16 @@
         %h2.text-center Protéines
         - @ingredients['proteines'].each do | ingredient |
           .checkbox.checkbox-success
-            %input#checkbox1{:type => "checkbox"}/
-            %label{:for => "checkbox1"}
+            = check_box_tag("ingredients[#{ingredient.id}]")
+            %label{:for => "#{ingredient.id}"}
             = ingredient.nom
 
       .col-xs-12.col-md-4
         %h2.text-center Légumes
         - @ingredients['legumes'].each do | ingredient |
           .checkbox.checkbox-success
-            %input#checkbox1{:type => "checkbox"}/
-            %label{:for => "checkbox1"}
+            = check_box_tag("ingredients[#{ingredient.id}]")
+            %label{:for => "#{ingredient.id}"}
             = ingredient.nom
     .row
       .col-xs-12.col-md-12.text-center

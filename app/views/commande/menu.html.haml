@@ -1,0 +1,5 @@
+.container.principal
+  = render :partial => 'menu', locals: {:etape => 2}
+
+  - @plats.each do | plat |
+    = plat.nom
