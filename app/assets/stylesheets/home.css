@@ -68,3 +68,19 @@ video {
 #glucides-slider {
   background-color: #F0AD4E;
 }
+
+.categorie-glucides, .categorie-proteines, .categorie-legumes {
+  margin-bottom: 15px;
+}
+
+.categorie-glucides {
+  border-bottom: 6px solid #D9534F;
+}
+
+.categorie-proteines {
+  border-bottom: 6px solid #F0AD4E;
+}
+
+.categorie-legumes {
+  border-bottom: 6px solid #38B13D;
+}

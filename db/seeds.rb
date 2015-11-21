@@ -6,22 +6,70 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-pates  = Ingredient.create({id: 1, nom:"Pates", categorie: "glucides"})
-riz    = Ingredient.create({id: 5, nom:"Riz", categorie: "glucides"})
-pois  = Ingredient.create({id: 2, nom:"Petits Pois", categorie: "legumes"})
-viande = Ingredient.create({id: 3, nom:"Viande", categorie: "proteines"})
-baies  = Ingredient.create({id: 4, nom:"Baies", categorie: "superflux"})
+Ingredient.create({id: 1, nom:"Poulet/Dinde", categorie: "proteines"})
+Ingredient.create({id: 2, nom:"Saumon", categorie: "proteines"})
+Ingredient.create({id: 3, nom:"Thon", categorie: "proteines"})
+Ingredient.create({id: 4, nom:"Rôti de porc", categorie: "proteines"})
+Ingredient.create({id: 5, nom:"Boeuf", categorie: "proteines"})
+Ingredient.create({id: 6, nom:"Haricot rouge", categorie: "proteines"})
+Ingredient.create({id: 7, nom:"Oeuf", categorie: "proteines"})
 
-p1 = Plat.new({id: 1, nom: "Plat 1"})
+Ingredient.create({id: 8, nom:"Riz complet", categorie: "glucides"})
+Ingredient.create({id: 9, nom:"Quinoa", categorie: "glucides"})
+Ingredient.create({id: 10, nom:"Pâtes complètes", categorie: "glucides"})
+Ingredient.create({id: 11, nom:"Patate douce", categorie: "glucides"})
 
-p1.ingredients << pates
-p1.ingredients << pois
+Ingredient.create({id: 12, nom:"Carotte", categorie: "legumes"})
+Ingredient.create({id: 13, nom:"Courgette", categorie: "legumes"})
+Ingredient.create({id: 14, nom:"Haricot", categorie: "legumes"})
+Ingredient.create({id: 15, nom:"Tomate", categorie: "legumes"})
+Ingredient.create({id: 16, nom:"Petits pois", categorie: "legumes"})
+Ingredient.create({id: 17, nom:"Pois chiche", categorie: "legumes"})
+Ingredient.create({id: 18, nom:"Poivron", categorie: "legumes"})
+Ingredient.create({id: 19, nom:"Choux de bruxelles", categorie: "legumes"})
+Ingredient.create({id: 20, nom:"Potimarron", categorie: "legumes"})
+Ingredient.create({id: 21, nom:"Navet", categorie: "legumes"})
+Ingredient.create({id: 22, nom:"Epinard", categorie: "legumes"})
+Ingredient.create({id: 23, nom:"Radis", categorie: "legumes"})
+Ingredient.create({id: 24, nom:"Oignon", categorie: "legumes"})
+Ingredient.create({id: 25, nom:"Citron", categorie: "legumes"})
+Ingredient.create({id: 26, nom:"Ananas", categorie: "legumes"})
+Ingredient.create({id: 27, nom:"Raisin sec", categorie: "legumes"})
+Ingredient.create({id: 28, nom:"Pomme", categorie: "legumes"})
+Ingredient.create({id: 33, nom:"Poireau", categorie: "legumes"})
 
+Ingredient.create({id: 29, nom:"Baies de Goji", categorie: "superflux"})
+Ingredient.create({id: 30, nom:"Aloe Vera", categorie: "superflux"})
+Ingredient.create({id: 31, nom:"Racine Gingembre", categorie: "superflux"})
+Ingredient.create({id: 32, nom:"Reishi Mushroom", categorie: "superflux"})
+
+p1 = Plat.new({id: 1, nom: "Emincé de légumes avec escalope de dinde grillée"})
+
+p1.ingredients << Ingredient.find(1)
+p1.ingredients << Ingredient.find(12)
+p1.ingredients << Ingredient.find(13)
+p1.ingredients << Ingredient.find(18)
+p1.ingredients << Ingredient.find(24)
 p1.save!
 
-p2 = Plat.new({id: 2, nom: "Plat 2"})
-
-p2.ingredients << viande
-p2.ingredients << pates
-
+p2 = Plat.new({id: 2, nom: "Riz cantonais"})
+p2.ingredients << Ingredient.find(1)
+p2.ingredients << Ingredient.find(16)
+p2.ingredients << Ingredient.find(24)
+p2.ingredients << Ingredient.find(7)
+p2.ingredients << Ingredient.find(12)
 p2.save!
+
+p3 = Plat.new({id: 3, nom: "Fondue de légumes avec pavé de thon grillé"})
+p3.ingredients << Ingredient.find(33)
+p3.ingredients << Ingredient.find(20)
+p3.ingredients << Ingredient.find(3)
+p3.save!
+
+p4 = Plat.new({id: 4, nom: "Compote de quinoa avec saumon au citron"})
+p4.ingredients << Ingredient.find(2)
+p4.ingredients << Ingredient.find(25)
+p4.ingredients << Ingredient.find(9)
+p4.ingredients << Ingredient.find(27)
+p4.ingredients << Ingredient.find(28)
+p4.save!
