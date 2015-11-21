@@ -37,19 +37,21 @@ Ingredient.create({id: 26, nom:"Ananas", categorie: "legumes"})
 Ingredient.create({id: 27, nom:"Raisin sec", categorie: "legumes"})
 Ingredient.create({id: 28, nom:"Pomme", categorie: "legumes"})
 Ingredient.create({id: 33, nom:"Poireau", categorie: "legumes"})
+Ingredient.create({id: 34, nom:"Basilic", categorie: "legumes"})
 
 Ingredient.create({id: 29, nom:"Baies de Goji", categorie: "superflux"})
 Ingredient.create({id: 30, nom:"Aloe Vera", categorie: "superflux"})
 Ingredient.create({id: 31, nom:"Racine Gingembre", categorie: "superflux"})
 Ingredient.create({id: 32, nom:"Reishi Mushroom", categorie: "superflux"})
 
-p1 = Plat.new({id: 1, nom: "Emincé de légumes avec escalope de dinde grillée"})
+p1 = Plat.new({id: 1, nom: "Emincé de légumes et escalope de dinde grillée"})
 
 p1.ingredients << Ingredient.find(1)
 p1.ingredients << Ingredient.find(12)
 p1.ingredients << Ingredient.find(13)
 p1.ingredients << Ingredient.find(18)
 p1.ingredients << Ingredient.find(24)
+p1.ingredients << Ingredient.find(11)
 p1.save!
 
 p2 = Plat.new({id: 2, nom: "Riz cantonais"})
@@ -73,3 +75,26 @@ p4.ingredients << Ingredient.find(9)
 p4.ingredients << Ingredient.find(27)
 p4.ingredients << Ingredient.find(28)
 p4.save!
+
+p5 = Plat.new({id: 5, nom: "Saumon poché au basilic, ses légumes et riz complet"})
+p5.ingredients << Ingredient.find(34)
+p5.ingredients << Ingredient.find(2)
+p5.ingredients << Ingredient.find(12)
+p5.ingredients << Ingredient.find(13)
+p5.ingredients << Ingredient.find(24)
+p5.ingredients << Ingredient.find(8)
+p5.save!
+
+p6 = Plat.new({id: 6, nom: "Poulet au citron et riz complet"})
+p6.ingredients << Ingredient.find(1)
+p6.ingredients << Ingredient.find(8)
+p6.ingredients << Ingredient.find(25)
+p6.ingredients << Ingredient.find(13)
+p6.save!
+
+p7 = Plat.new({id: 7, nom: "Poulet à l'ananas, poivron et riz complet"})
+p7.ingredients << Ingredient.find(1)
+p7.ingredients << Ingredient.find(18)
+p7.ingredients << Ingredient.find(26)
+p7.ingredients << Ingredient.find(8)
+p7.save!
