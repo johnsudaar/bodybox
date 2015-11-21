@@ -33,6 +33,7 @@ $ ->
   $(".box-type").click ->
     size = Math.floor($(this).attr "data-size")
     maxProteines = Math.floor(size / 30) * 10
+    $("#commande_box-size").val(size);
 
     sProteines = document.getElementById('proteines-slider')
 

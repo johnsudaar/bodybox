@@ -62,6 +62,7 @@
           = form_tag(controller: "commande",action: "choisir", method:"get") do
             = check_box_tag "nbmeals", "yes",false, :class => "toggle-button"
             = hidden_field_tag("commande[proteines]", {:id => "proteines-form"})
+            = hidden_field_tag("commande[box-size]")
             = hidden_field_tag("commande[glucides]")
             = hidden_field_tag("commande[legumes]")
             %br
