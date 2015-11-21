@@ -56,3 +56,15 @@ video {
   padding-left: 25px;
   padding-right: 25px;
 }
+
+.oswald {
+  font-family: 'Oswald', sans-serif;
+}
+
+#proteines-slider {
+  background-color: #D9534F;
+}
+
+#glucides-slider {
+  background-color: #F0AD4E;
+}

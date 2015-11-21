@@ -1,23 +1,23 @@
 = render :partial => 'nav'
-.container
+.container.principal
   = render :partial => 'menu', locals: {:etape => 3}
 
   .row#box-select
     .col-xs-12.col-md-4.box-type{"data-size" => "250"}
-      = image_tag("box.png", :class => "small-box center-block")
-      .p.small-box-description
+      = image_tag("Bodybox-box.png", :class => "small-box center-block")
+      .h3.small-box-description
         Petite box (250g)
 
     .col-xs-12.col-md-4.box-type{"data-size" => "650"}
-      = image_tag("box.png", :class => "medium-box center-block")
-      .p.medium-box-description
+      = image_tag("Bodybox-box.png", :class => "medium-box center-block")
+      .h3.medium-box-description
         Moyenne box(650g)
     .col-xs-12.col-md-4.box-type{"data-size" => "800"}
-      = image_tag("box.png", :class => "big-box center-block")
-      .p.big-box-description
+      = image_tag("Bodybox-box.png", :class => "big-box center-block")
+      .h3.big-box-description
         Grande box(800g)
   #value-select
-    %h1 Choisis ta répartition :
+    %h2.oswald Choisis ta répartition :
     %br
     .row
       .col-md-4.col-xs-12
@@ -37,9 +37,9 @@
             0g
     %br
     .progress
-      .progress-bar.progress-bar-success#proteines-pb{:style => "width: 33%"}
+      .progress-bar.progress-bar-danger#proteines-pb{:style => "width: 33%"}
       .progress-bar.progress-bar-warning#glucides-pb{:style => "width: 33%"}
-      .progress-bar.progress-bar-info#legumes-pb{:style => "width: 34%"}
+      .progress-bar.progress-bar-success#legumes-pb{:style => "width: 34%"}
     .row
       #proteines-group
         .col-md-2.col-xs-12

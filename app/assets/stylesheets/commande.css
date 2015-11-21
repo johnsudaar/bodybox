@@ -22,31 +22,34 @@
 /*END Form Wizard*/
 
 .small-box {
-  margin-top: 100px;
-  height: 120px;
+  margin-top: 60px;
+  height: 180px;
 }
 
 .medium-box {
-  margin-top: 50px;
-  height: 220px;
+  margin-top: 35px;
+  height: 230px;
 }
 
 .big-box {
-  height: 320px;
+  height: 280px;
 }
 
 .small-box-description {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 60px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .medium-box-description {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 35px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .big-box-description {
   text-align: center;
+  font-family: 'Oswald', sans-serif;
 }
 
 .slider{
@@ -60,5 +63,5 @@
 }
 
 .principal {
-  rgba(255,255,255,.9);
+  margin-bottom: 50px;
 }
