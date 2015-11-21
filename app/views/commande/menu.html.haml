@@ -11,23 +11,34 @@
 
 :javascript
   $(chercherPlats);
-  $("#generer").click(chercherPlats);
+  $("#generer").click(chercherPlats);  
+
   function chercherPlats() {
     $.getJSON("/commande/plats", function( data ) {
-        $("#plats").html("");
+        $("#plats").html('<div class="row"></div>');
         $.each( data, function( key, val ) {
+          var ingredients = "";
+          $.each(val.ingredients, function( key, val) {
+            ingredients += "<p>"+val.nom+"</p>";
+          });
           if (data.length == 3) {
-            $("#plats").append('<div class="col-sx-12 col-md-4">' +
-                              '<div class="photo-plat" style="background-image: url(\'/plats/'+val.plat.id+'.jpg\');"></div>'+
+            $("#plats .row").append('<div class="col-sx-12 col-md-4">' +
+                              '<div class="photo-plat" style="background-image: url(\'/plats/'+val.plat.id+'.jpg\');"><div class="ingredients">'+ingredients+'</div></div>'+
                               '<h3 class="oswald nom-plat">'+val.plat.nom+'</h3>'+
                               '</div>');
           }
           else {
-            $("#plats").append('<div class="col-sx-12 col-md-6">' +
-                              '<div class="photo-plat" style="background-image: url(\'/plats/'+val.plat.id+'.jpg\');"></div>'+
+            $("#plats .row").append('<div class="col-sx-12 col-md-6">' +
+                              '<div class="photo-plat" style="background-image: url(\'/plats/'+val.plat.id+'.jpg\');"><div class="ingredients">'+ingredients+'</div></div>'+
                               '<h3 class="oswald nom-plat">'+val.plat.nom+'</h3>'+
                               '</div>');
           }
+        });
+        $(".photo-plat").mouseover(function() {
+          $(this).find(".ingredients").slideDown( "slow", function() {});
+        });
+        $(".photo-plat").mouseleave(function() {
+          $(this).find(".ingredients").slideUp( "slow", function() {});
         });
        
     });

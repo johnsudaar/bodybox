@@ -98,3 +98,10 @@ p7.ingredients << Ingredient.find(18)
 p7.ingredients << Ingredient.find(26)
 p7.ingredients << Ingredient.find(8)
 p7.save!
+
+p8 = Plat.new({id: 8, nom: "Tomates farcies au boeuf sur son lit de riz complet"})
+p8.ingredients << Ingredient.find(5)
+p8.ingredients << Ingredient.find(24)
+p8.ingredients << Ingredient.find(15)
+p8.ingredients << Ingredient.find(8)
+p8.save!
