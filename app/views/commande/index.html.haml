@@ -54,7 +54,9 @@
           .slider#glucides-slider
         %br
         .row
-          / - form_tag(controller: "commande",action: "menu", method:"post") do
-          /   = hidden_field_tag("commande[proteines]")
-          /   %input.btn.btn-default.btn-primary.col-sm-12.col-md-4.col-md-offset-4{:type => "submit"}
-          /     Valider
+          = form_tag(controller: "commande",action: "choisir", method:"get") do
+            = hidden_field_tag("commande[proteines]", {:id => "proteines-form"})
+            = hidden_field_tag("commande[glucides]")
+            = hidden_field_tag("commande[legumes]")
+            %br
+            = submit_tag("Valider", {:class => "btn btn-default"})

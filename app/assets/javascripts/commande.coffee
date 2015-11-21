@@ -59,8 +59,13 @@ $ ->
       sGlucides.noUiSlider.on 'update', ->
         glucides = Math.floor(sGlucides.noUiSlider.get())
         proteines = Math.floor(sProteines.noUiSlider.get())
-
         legumes = size - proteines - glucides
+
+        $("#commande_glucides").val(glucides);
+        $("#commande_proteines").val(proteines);
+        $("#commande_legumes").val(legumes);
+
+
         $("#glucides-value").text(glucides+" g")
         $("#legumes-value").text(legumes+" g")
         update_graph(proteines, glucides, legumes, size)
