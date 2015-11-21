@@ -14,6 +14,39 @@ update_graph = (proteines, glucides, legumes, size) ->
   $("#proteines-pb").width(proteines_prc+"%")
   $("#glucides-pb").width(glucides_prc+"%")
 
+update_all = (proteines, glucides, legumes, size) ->
+  $("#commande_glucides").val(glucides)
+  $("#commande_proteines").val(proteines)
+  $("#commande_legumes").val(legumes)
+  $("#proteines-value").text(proteines+" g")
+  $("#glucides-value").text(glucides+" g")
+  $("#legumes-value").text(legumes+" g")
+
+  $("#show-glucides").hide()
+  $("#nb-meals-btn").hide()
+
+  sGlucides = document.getElementById('glucides-slider')
+  sProteines = document.getElementById('proteines-slider')
+
+  noUiSlider.create sGlucides,
+    start: glucides
+    connect: "lower"
+    step: 10
+    range:
+      'min': 0
+      'max': Math.floor(size/20)*10
+  sProteines.noUiSlider.set proteines
+
+  $(".toggle-button").bootstrapSwitch
+    onText: "Deux repas"
+    offText: "Trois repas"
+    handleWidth: 100
+    wrapperClass: "toggle-button-wrapper"
+
+  $("#nb-meals").slideToggle 'slow', ->
+  $("#glucides-group").slideToggle "slow", ->
+  update_graph(proteines, glucides, legumes, size)
+
 $ ->
   $("#nb-meals-btn").click ->
     $(".toggle-button").bootstrapSwitch
@@ -32,13 +65,28 @@ $ ->
 
   $(".box-type").click ->
     size = Math.floor($(this).attr "data-size")
-    maxProteines = Math.floor(size / 30) * 10
+
+    $("#hyperpoteine").click ->
+      proteines = Math.floor(size / 20)*10
+      glucides = Math.floor(size / 40)*10
+      legumes = size - proteines - glucides
+      update_all proteines, glucides, legumes, size
+      $(".btn-preset").hide()
+
+    $("#regime").click ->
+      proteines = Math.floor(size / 40)*10
+      glucides = Math.floor(size / 40)*10
+      legumes = size - proteines - glucides
+      update_all proteines, glucides, legumes, size
+      $(".btn-preset").hide()
+
+    maxProteines = Math.floor(size / 20) * 10
     $("#commande_box-size").val(size);
 
     sProteines = document.getElementById('proteines-slider')
 
     noUiSlider.create sProteines,
-      start: maxProteines
+      start: Math.floor(size / 30) * 10
       connect: "lower"
       step: 10
       range:
