@@ -8,7 +8,7 @@
         %h2.text-center.oswald.categorie-glucides Glucides
         - @ingredients['glucides'].each do | ingredient |
           .checkbox.checkbox-danger
-            = check_box_tag("ingredients[#{ingredient.id}]")
+            = check_box_tag("ingredients[#{ingredient.id}]", true,true)
             %label{:for => "#{ingredient.id}"}
             = ingredient.nom
 
@@ -16,14 +16,14 @@
         %h2.text-center.oswald.categorie-proteines Protéines
         - @ingredients['proteines'].each do | ingredient |
           .checkbox.checkbox-warning
-            = check_box_tag("ingredients[#{ingredient.id}]")
+            = check_box_tag("ingredients[#{ingredient.id}]", true,true)
             %label{:for => "#{ingredient.id}"}
             = ingredient.nom
       .col-xs-12.col-md-4
         %h2.text-center.oswald.categorie-legumes Fruits et légumes
         - @ingredients['legumes'].each do | ingredient |
           .checkbox.checkbox-success
-            = check_box_tag("ingredients[#{ingredient.id}]")
+            = check_box_tag("ingredients[#{ingredient.id}]", true,true)
             %label{:for => "#{ingredient.id}"}
             = ingredient.nom
     .row
