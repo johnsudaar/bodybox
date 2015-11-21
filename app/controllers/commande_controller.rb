@@ -4,6 +4,5 @@ class CommandeController < ApplicationController
 
   def choisir
     @ingredients = Ingredient.all.group_by(&:categorie)
-    puts @ingredients.to_json
   end
 end

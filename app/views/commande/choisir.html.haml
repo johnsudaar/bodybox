@@ -1,5 +1,34 @@
-- @ingredients.each do | group, dd |
-  = "#{group} :"
-  - dd.each do | ee |
-    = ee.nom
-  %br
+.container
+  = render :partial => 'menu', locals: {:etape => 1}
+
+  
+  //- form_tag(controller: "choisir", action: "menu", method: "post") do
+  %form
+    .row
+      .col-xs-12.col-md-4
+        %h2.text-center Glucides
+        - @ingredients['glucides'].each do | ingredient |
+          .checkbox.checkbox-success
+            %input#checkbox1{:type => "checkbox"}/
+            %label{:for => "checkbox1"}
+            = ingredient.nom
+         
+
+      .col-xs-12.col-md-4
+        %h2.text-center Protéines
+        - @ingredients['proteines'].each do | ingredient |
+          .checkbox.checkbox-success
+            %input#checkbox1{:type => "checkbox"}/
+            %label{:for => "checkbox1"}
+            = ingredient.nom
+
+      .col-xs-12.col-md-4
+        %h2.text-center Légumes
+        - @ingredients['legumes'].each do | ingredient |
+          .checkbox.checkbox-success
+            %input#checkbox1{:type => "checkbox"}/
+            %label{:for => "checkbox1"}
+            = ingredient.nom
+    .row
+      .col-xs-12.col-md-12.text-center
+        %button.btn.btn-default{:type => "submit"} Valider
