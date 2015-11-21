@@ -1,36 +1,60 @@
-.container
-  = render :partial => 'menu', locals: {:etape => 3}
+.container.principal
+  = render :partial => 'menu', locals: {:etape => 0}
 
-  .row
-    .col-xs-12.col-md-4
-      %a{:href => "#"}
-        = image_tag("box.png", :class => "small-box center-block")
+  .row#box-select
+    .col-xs-12.col-md-4.box-type{"data-size" => "250"}
+      = image_tag("box.png", :class => "small-box center-block")
       .p.small-box-description
-        Petite box
-      #small-slider
+        Petite box (250g)
 
-    .col-xs-12.col-md-4
-      %a{:href => "#"}
-        = image_tag("box.png", :class => "medium-box center-block")
+    .col-xs-12.col-md-4.box-type{"data-size" => "650"}
+      = image_tag("box.png", :class => "medium-box center-block")
       .p.medium-box-description
-        Moyenne box
-    .col-xs-12.col-md-4
-      %a{:href => "#"}
-        = image_tag("box.png", :class => "big-box center-block")
+        Moyenne box(650g)
+    .col-xs-12.col-md-4.box-type{"data-size" => "800"}
+      = image_tag("box.png", :class => "big-box center-block")
       .p.big-box-description
-        Grande box
-
-:javascript
-
-  $("#small-slider").noUiSlider({
-      step: 10,
-      range: {
-        'min': 0,
-        'max': 300
-      },
-      start: [20, 90]
-  });
-
-  $("#small-slider").noUiSlider.on('slide', function(){
-    console.log("ok");
-  });
+        Grande box(800g)
+  #value-select
+    %h1 Choisis ta répartition :
+    %br
+    .row
+      .col-md-4.col-xs-12
+        %h4
+          Legumes :
+          %span#legumes-value
+            NAg
+      .col-md-4.col-xs-12
+        %h4
+          Glucides :
+          %span#glucides-value
+            NAg
+      .col-md-4.col-xs-12
+        %h4
+          Proteines :
+          %span#proteines-value
+            NAg
+    %br
+    .progress
+      .progress-bar.progress-bar-success#legumes-pb{:style => "width: 33%"}
+      .progress-bar.progress-bar-warning#glucides-pb{:style => "width: 33%"}
+      .progress-bar.progress-bar-info#proteines-pb{:style => "width: 34%"}
+    .row
+      .col-md-2.col-xs-12
+        .v-center Legumes :
+      .col-md-10.col-xs-12
+        .slider#legumes-slider
+      .col-md-2.col-xs-12
+        .v-center Glucides :
+      .col-md-10.col-xs-12
+        .slider#glucides-slider
+      .col-md-2.col-xs-12
+        .v-center Proteines :
+      .col-md-10.col-xs-12
+        .slider#proteines-slider
+    %br
+    / .row
+    /   - form_tag(controller: "commande",action: "menu", method:"post") do
+    /     = hidden_field_tag("commande[proteines]")
+    /     %input.btn.btn-default.btn-primary.col-sm-12.col-md-4.col-md-offset-4{:type => "submit"}
+    /       Valider

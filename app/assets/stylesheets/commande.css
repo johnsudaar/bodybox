@@ -48,3 +48,13 @@
 .big-box-description {
   text-align: center;
 }
+
+.slider{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.v-center{
+  margin-top: 4px;
+  text-align: right;
+}
