@@ -30,6 +30,29 @@ video {
 	font-size: 70px;
 }
 
-.slogan {
-	margin-top: 0px;
+.nav-green {
+  background-color: #38b13d;
+  height: 240px;
+  text-align: center;
+  background-image: url("/pattern.png");
+}
+
+.bodybox {
+  width: 220px;
+  background-color: white;
+  padding : 10px;
+  border-radius: 5px;
+  margin-top: 17px;
+}
+
+.liens {
+  color: white;
+  font-size: 16px;
+  margin-top: 20px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.liens li {
+  padding-left: 25px;
+  padding-right: 25px;
 }
