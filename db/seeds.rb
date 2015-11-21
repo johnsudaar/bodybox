@@ -59,6 +59,7 @@ p2.ingredients << Ingredient.find(1)
 p2.ingredients << Ingredient.find(16)
 p2.ingredients << Ingredient.find(24)
 p2.ingredients << Ingredient.find(7)
+p2.ingredients << Ingredient.find(8)
 p2.ingredients << Ingredient.find(12)
 p2.save!
 
@@ -66,6 +67,7 @@ p3 = Plat.new({id: 3, nom: "Fondue de légumes avec pavé de thon grillé"})
 p3.ingredients << Ingredient.find(33)
 p3.ingredients << Ingredient.find(20)
 p3.ingredients << Ingredient.find(3)
+p3.ingredients << Ingredient.find(11)
 p3.save!
 
 p4 = Plat.new({id: 4, nom: "Compote de quinoa avec saumon au citron"})
