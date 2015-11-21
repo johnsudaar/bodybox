@@ -6,7 +6,7 @@ class CommandeController < ApplicationController
     @session[:proteines_value] = params["commande"]["proteines"]
     @session[:glucides_value] = params["commande"]["glucides"]
     @session[:legumes_value] = params["commande"]["legumes"]
-    puts params["nbmeals"]
+    @session[:box_size] = params["commande"]["box-size"]
     if params["nbmeals"] == "yes"
       @session[:nb_meals] = 2
     else
