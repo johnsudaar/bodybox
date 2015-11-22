@@ -9,5 +9,63 @@
 
 .wrapp
   = image_tag("Bodybox-logo3.png", :class => "bodybox")
-  %h1.slogan 100% Frais 100% Français
+
+  .container
+    .row
+      .txt-accueil
+        %h3.oswald.c-koi BODY BOX C'EST QUOI ?
+        %p
+          Vous êtes fatigués de cuisiner vos plats diététiques entre vos séances de sport, on vous propose de les faire pour vous et de vous les livrer où vous voulez ! 
+          %br
+          Des produits frais & sains dans une box ; en adéquation avec votre santé et votre objectif physique : c’est ce que BODYBOX vous propose !
+
+    .row
+      .col-xs-12.col-md-4.col-accueil
+        .wrapper-col
+          .h3.oswald.titre-col
+            VOS OBJECTIFS… PLUS FACILEMENT !
+          %p
+            Body Box vous offre une solution : Des formules de repas diététiques 100% frais et adaptées à votre objectif. 
+            %br
+            %span.gras Révélons ensemble cette nouvelle version de vous !
+            = image_tag("cible.png", :class => "img-accueil")
+
+
+      .col-xs-12.col-md-4.col-accueil
+        .wrapper-col
+          .h3.oswald.titre-col
+            MOINS DE TRACAS… PLUS DE LIBERTE !
+          %p
+            Fini les heures dans les supermarchés à faire les courses, à cuisiner ou à faire la vaisselle…
+            Désormais, moins de stress, de soucis, plus temps et de variété pour un mode de vie sportif.
+            Avec Bodybox, la vie devient tellement plus facile.
+            %br
+            %span.gras Bodybox a bien compris que votre temps est précieux. Il n’est jamais trop tard pour profiter de la vie…
+
+
+      .col-xs-12.col-md-4.col-accueil
+        .wrapper-col
+          .h3.oswald.titre-col
+            BODYBOX, VOUS AVEZ TOUT COMPRIS !
+          %p
+            Les entrainements sont importants, mais s’alimenter correctement en fonction de vos objectifs l’est encore plus. Mangez sainement, mangez équilibré, adoptez Bodybox !
+            %br
+            %span.gras Ne laissez plus votre Bien Etre vous échapper.
+            = image_tag("well.png", :class => "img-accueil")
+
+
+:javascript 
+  $(function() {
+    var h = 0;
+    $('.wrapper-col').each(function() {
+      if ($(this).height() > h) {
+          h = $(this).height();
+      }
+    });
+    console.log(h);
+    $('.wrapper-col').each(function() {
+      $(this).height(h);
+    });
+ 
+  });
 
