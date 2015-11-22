@@ -116,6 +116,7 @@ p9.save!
 
 p10 = Plat.new({id: 10, nom: "Rotinis aux légumes"})
 p10.ingredients << Ingredient.find(10)
+p10.ingredients << Ingredient.find(5)
 p10.ingredients << Ingredient.find(22)
 p10.ingredients << Ingredient.find(15)
 p10.ingredients << Ingredient.find(18)
