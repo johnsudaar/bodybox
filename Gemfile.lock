@@ -55,6 +55,7 @@ GEM
     execjs (2.6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     haml (4.0.6)
       tilt
     haml-rails (0.9.0)
@@ -164,6 +165,7 @@ DEPENDENCIES
   bootstrap_form
   byebug
   coffee-rails (~> 4.1.0)
+  gmaps4rails
   haml-rails (~> 0.9)
   jbuilder (~> 2.0)
   jquery-rails
@@ -175,3 +177,6 @@ DEPENDENCIES
   twitter-bootstrap-rails
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.10.6

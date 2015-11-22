@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require bootstrap-switch
+//= require underscore
+//= require gmaps/google
 //= require_tree .
