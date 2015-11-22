@@ -26,6 +26,10 @@ gem "haml-rails", "~> 0.9"
 gem "twitter-bootstrap-rails"
 gem 'bootstrap_form'
 gem "bootstrap-switch-rails"
+gem 'puma'
+gem "rack-timeout"
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
