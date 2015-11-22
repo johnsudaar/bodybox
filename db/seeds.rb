@@ -136,3 +136,24 @@ p12.ingredients << Ingredient.find(33)
 p12.ingredients << Ingredient.find(15)
 p12.save!
 
+p13 = Plat.new({id: 13, nom: "Poêlée de courgettes à la provençale au quinoa gourmand"})
+p13.ingredients << Ingredient.find(13)
+p13.ingredients << Ingredient.find(5)
+p13.ingredients << Ingredient.find(9)
+p13.ingredients << Ingredient.find(21)
+p13.save!
+
+p14 = Plat.new({id: 14, nom: "Salade niçoise au quinoa gourmand"})
+p14.ingredients << Ingredient.find(13)
+p14.ingredients << Ingredient.find(7)
+p14.ingredients << Ingredient.find(9)
+p14.ingredients << Ingredient.find(3)
+p14.ingredients << Ingredient.find(14)
+p14.save!
+
+p15 = Plat.new({id: 15, nom: "Potimarron sauté au boeuf sur son lit de riz"})
+p15.ingredients << Ingredient.find(5)
+p15.ingredients << Ingredient.find(8)
+p15.ingredients << Ingredient.find(20)
+p15.save!
+
