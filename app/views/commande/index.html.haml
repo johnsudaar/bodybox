@@ -23,18 +23,20 @@
         .pull-right
           .btn.btn-default.btn-success#hyperpoteine
             Hyperprotéiné
+          .btn.btn-default.btn-success#hypocalorique
+            Hypocalorique
           .btn.btn-default.btn-success#regime
             Standard
     %br
     .row.clearfix
       .col-md-4.col-xs-12
         %h4
-          Proteines :
+          Source de protéines :
           %span#proteines-value
             0g
       .col-md-4.col-xs-12
         %h4
-          Glucides :
+          Féculents :
           %span#glucides-value
             0g
       .col-md-4.col-xs-12
@@ -49,17 +51,17 @@
       .progress-bar.progress-bar-success#legumes-pb{:style => "width: 34%"}
     .row
       #proteines-group.text-align-center
-        .col-md-2.col-xs-12
-          .v-center Proteines :
-        .col-md-10.col-xs-12
+        .col-md-3.col-xs-12
+          .v-center Source de proteines:
+        .col-md-9.col-xs-12
           .slider#proteines-slider
         %br
         #show-glucides.btn.btn-default
           Valider
       #glucides-group.text-align-center
-        .col-md-2.col-xs-12
-          .v-center Glucides :
-        .col-md-10.col-xs-12
+        .col-md-3.col-xs-12
+          .v-center Féculents:
+        .col-md-9.col-xs-12
           .slider#glucides-slider
         %br
         #nb-meals-btn.btn.btn-default

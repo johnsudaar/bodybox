@@ -28,7 +28,9 @@
             Body Box vous offre une solution : Des formules de repas diététiques 100% frais et adaptées à votre objectif. 
             %br
             %span.gras Révélons ensemble cette nouvelle version de vous !
+            %br
             = image_tag("cible.png", :class => "img-accueil")
+            %br
 
 
       .col-xs-12.col-md-4.col-accueil
@@ -51,7 +53,9 @@
             Les entrainements sont importants, mais s’alimenter correctement en fonction de vos objectifs l’est encore plus. Mangez sainement, mangez équilibré, adoptez Bodybox !
             %br
             %span.gras Ne laissez plus votre Bien Etre vous échapper.
+            %br
             = image_tag("well.png", :class => "img-accueil")
+            %br
 
 
 :javascript 
@@ -59,7 +63,7 @@
     var h = 0;
     $('.wrapper-col').each(function() {
       if ($(this).height() > h) {
-          h = $(this).height();
+          h = $(this).height() + 30;
       }
     });
     console.log(h);

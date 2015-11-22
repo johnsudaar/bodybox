@@ -26,7 +26,53 @@ class CommandeController < ApplicationController
   end
 
   def fin
-    @plats = Plat.find(@session["plats"])
+    @plats = []
+    @total = 0.0
+    @session["plats"].each do | p |
+      cur = {plat: Plat.find(p)}
+      puts "Calcul de : #{cur[:plat].nom}"
+      box_size = @session["box_size"]
+      prix_elems = {"legumes" => 0.0, "glucides" => 0.0, "proteines" => 0.0}
+      nb_elems = {"legumes" => 0, "glucides" => 0, "proteines" => 0}
+      prix = {}
+      cur[:plat].ingredients.each do |ingr|
+        puts "Prix de #{ingr.nom} (#{ingr.categorie}) : #{ingr.prix}"
+        prix_elems[ingr.categorie] += ingr.prix
+        nb_elems[ingr.categorie] += 1
+      end
+      p_glucides = prix_elems["glucides"] / nb_elems["glucides"]
+      p_proteines = prix_elems["proteines"] / nb_elems["proteines"]
+      p_legumes = prix_elems["legumes"] / nb_elems["legumes"]
+
+      prix_glucides = p_glucides * @session["glucides_value"].to_i
+      prix_proteines = p_proteines * @session["proteines_value"].to_i
+      prix_legumes = p_legumes * @session["legumes_value"].to_i
+      puts "Moyenne glucides = #{p_glucides}"
+      puts "Moyenne proteines = #{p_proteines}"
+      puts "Moyenne legumes = #{p_glucides}"
+      puts "Size glucides = #{@session["glucides_value"]}"
+      puts "Size proteines = #{@session["proteines_value"]}"
+      puts "Size legumes = #{@session["legumes_value"]}"
+      puts "Prix glucides = #{prix_glucides}"
+      puts "Prix proteines = #{prix_proteines}"
+      puts "Prix legumes = #{prix_legumes}"
+      prix_glob = prix_glucides + prix_proteines + prix_legumes
+      puts "Prix sans marge : #{prix_glob}"
+      if box_size == 500
+        prix_glob += 9
+      elsif box_size == 400
+        prix_glob += 8.5
+      else
+        prix_glob += 7.5
+      end
+
+      prix_glob = prix_glob.round(2)
+      puts "Prix avec marge : #{prix_glob}"
+
+      cur[:prix] = prix_glob
+      @total += prix_glob
+      @plats << cur
+    end
   end
 
   def plats

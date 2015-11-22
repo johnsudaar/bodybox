@@ -5,7 +5,7 @@
   = form_tag(controller: "commande", action: "menu", method: "post") do
     .row
       .col-xs-12.col-md-4
-        %h2.text-center.oswald.categorie-glucides Glucides
+        %h2.text-center.oswald.categorie-glucides Féculents
         - @ingredients['glucides'].each do | ingredient |
           .checkbox.checkbox-danger
             = check_box_tag("ingredients[#{ingredient.id}]", true,true)
@@ -13,7 +13,7 @@
             = ingredient.nom
 
       .col-xs-12.col-md-4
-        %h2.text-center.oswald.categorie-proteines Protéines
+        %h2.text-center.oswald.categorie-proteines Source de protéines
         - @ingredients['proteines'].each do | ingredient |
           .checkbox.checkbox-warning
             = check_box_tag("ingredients[#{ingredient.id}]", true,true)
