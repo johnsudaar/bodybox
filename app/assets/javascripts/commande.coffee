@@ -181,7 +181,7 @@ $ ->
     else
       $("#domicile").slideToggle "slow", ->
     $("#btn-domicile").addClass "active"
-    $("#btn-relais").removeClass "custom-hide"
+    $("#btn-relais").removeClass "active"
     first = false
 
 
