@@ -106,3 +106,33 @@ p8.ingredients << Ingredient.find(24)
 p8.ingredients << Ingredient.find(15)
 p8.ingredients << Ingredient.find(8)
 p8.save!
+
+p9 = Plat.new({id: 9, nom: "Rotinis de la mer"})
+p9.ingredients << Ingredient.find(10)
+p9.ingredients << Ingredient.find(2)
+p9.ingredients << Ingredient.find(15)
+p9.ingredients << Ingredient.find(13)
+p9.save!
+
+p10 = Plat.new({id: 10, nom: "Rotinis aux légumes"})
+p10.ingredients << Ingredient.find(10)
+p10.ingredients << Ingredient.find(22)
+p10.ingredients << Ingredient.find(15)
+p10.ingredients << Ingredient.find(18)
+p10.save!
+
+p11 = Plat.new({id: 11, nom: "Spaghettis aux poireaux et poivrons"})
+p11.ingredients << Ingredient.find(10)
+p11.ingredients << Ingredient.find(5)
+p11.ingredients << Ingredient.find(33)
+p11.ingredients << Ingredient.find(18)
+p11.ingredients << Ingredient.find(24)
+p11.save!
+
+p12 = Plat.new({id: 12, nom: "Gratin de raviolis méditerranéen"})
+p12.ingredients << Ingredient.find(10)
+p12.ingredients << Ingredient.find(2)
+p12.ingredients << Ingredient.find(33)
+p12.ingredients << Ingredient.find(15)
+p12.save!
+
