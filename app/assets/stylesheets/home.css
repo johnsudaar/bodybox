@@ -161,3 +161,7 @@ video {
 .btn-success:visited {
   color: white;
 }
+
+#map {
+  margin-bottom: 20px;
+}
