@@ -124,3 +124,11 @@
   padding-bottom: 3px;
   background-color: rgba(0,0,0,.05)
 }
+
+#map{
+  margin: auto;
+}
+
+#map-cont{
+  margin:auto;
+}
