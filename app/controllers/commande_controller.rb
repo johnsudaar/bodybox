@@ -26,7 +26,10 @@ class CommandeController < ApplicationController
   end
 
   def fin
-    @plats = Plat.find(@session["plats"])
+    @plats = []
+    @session["plats"].each do | p |
+      @plats << Plat.find(p)
+    end
   end
 
   def plats

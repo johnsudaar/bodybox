@@ -1,39 +1,101 @@
 = render :partial => 'nav'
 .container.principal
   = render :partial => 'menu', locals: {:etape => 4}
-  %h1 Recapitulatif de la commande
-  Taille de la box :
-  = @session["box_size"]
-  %br
+  %h1.oswald Recapitulatif de la commande
 
-  Proteines :
-  = @session["proteines_value"]
-  %br
-  Glucides :
-  = @session["glucides_value"]
-  %br
-  Legumes :
-  = @session["legumes_value"]
-  %br
+  .row.prix
+    .col-md-8.col-xs-12
+      %h3.oswald= "Une box de #{@session["box_size"]} g"
+    .col-md-4.col-xs-12
+      %h3.oswald.pull-right
+        5.-- €
+  .row
+    .col-md-4.col-xs-12
+      %h3= "Sources de protéines : #{@session["proteines_value"]} g"
+    .col-md-4.col-xs-12
+      %h3= "Féculents : #{@session["glucides_value"]} g"
+    .col-md-4.col-xs-12
+      %h3= "Legumes : #{@session["legumes_value"]} g"
+  .progress
+    .progress-bar.progress-bar-danger#proteines-pb{:style => "width: #{ 100 * @session["proteines_value"].to_i / @session["box_size"].to_i}%"}
+    .progress-bar.progress-bar-warning#glucides-pb{:style => "width: #{ 100 * @session["glucides_value"].to_i/ @session["box_size"].to_i}%"}
+    .progress-bar.progress-bar-success#legumes-pb{:style => "width: #{ 100 * @session["legumes_value"].to_i/ @session["box_size"].to_i}%"}
 
+  .row
   - @plats.each do | plat |
-    %h1=plat.nom
-    Ingredients :
-    %ul
-      - plat.ingredients.each do | ingredient |
-        %li= ingredient.nom
+    .col-md-6.col-xs-12
+      .plat-container
+        .row.plat
+          .col-md-5.col-xs-12.photo-plat.photo-plat-small{style:"background-image: url('/plats/#{plat.id}.jpg')"}
+          %h3.text-align-center.oswald=plat.nom
+          .col-md-7.col-xs-12.col-md-offset1
+            %h4.oswald Ingredients :
+            - plat.ingredients.each do | ingredient |
+              = ingredient.nom
 
-  %h1 Choix de la livraison
+  %br
+  %div.col-md-12
+    %hr
+    %h1.oswald Choix de la livraison
 
-  .text-align-center
-    .btn-group
-      .btn.btn-default#btn-relais
-        Point relais
-      .btn.btn-default#btn-domicile
-        Livraison a domincile
+    .text-align-center
+      .btn-group
+        .btn.btn-default#btn-relais
+          Point relais
+        .btn.btn-default#btn-domicile
+          Livraison a domincile
 
-  #relais
-    %h1 Relais
-  #domicile
-    %h1 Domicile
+    #relais
+      %br
+      .row
+        .col-md-4.col-xs-12.col-md-offset-4
+          .form-group
+            %label
+              Nom :
+            %input.form-control{:placeholder => "Doe", :type => "text"}/
+          .form-group
+            %label
+              Prenom :
+            %input.form-control{:placeholder => "John", :type => "text"}/
+          .form-group
+            %label
+              Point relais :
+            %select.form-control
+              %option Evae Strasbourg
+              %option BSA Shop
+          %a.confirm-buy.btn.btn-success
+            Acheter
+    #domicile
+      %br
+      .row
+        .col-md-4.col-xs-12.col-md-offset-4
+          .form-group
+            %label
+              Nom :
+            %input.form-control{:placeholder => "Doe", :type => "text"}/
+          .form-group
+            %label
+              Prenom :
+            %input.form-control{:placeholder => "John", :type => "text"}/
+          .form-group
+            %label
+              Addresse :
+            %input.form-control{:placeholder => "2 Hulk avenue", :type => "text"}/
+          .row
+            .col-md-6.col-xs-12
+              .form-group
+                %label
+                  Code postal :
+                %input.form-control{:placeholder => "67100", :type => "text"}/
+            .col-md-6.col-xs-12
+              .form-group
+                %label
+                  Ville :
+                %input.form-control{:placeholder => "Strasbourg", :type => "text"}/
+          .form-group
+            %label
+              Heure de livraison :
+            %input.form-control{:value => "10:45", :type => "time"}
 
+          %a.confirm-buy.btn.btn-success
+            Acheter

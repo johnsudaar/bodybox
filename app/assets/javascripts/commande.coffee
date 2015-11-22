@@ -80,6 +80,14 @@ $ ->
       update_all proteines, glucides, legumes, size
       $(".btn-preset").hide()
 
+    $("#hypocalorique").click ->
+      proteines = Math.floor(size / 40) * 10
+      glucides = Math.floor(size / 40) * 10
+      legumes = size - proteines - glucides
+      update_all proteines, glucides, legumes, size
+      $(".btn-preset").hide()
+
+
     maxProteines = Math.floor(size / 20) * 10
     $("#commande_box-size").val(size);
 
@@ -172,3 +180,11 @@ $ ->
     $("#btn-domicile").addClass "active"
     $("#btn-relais").removeClass "active"
     first = false
+
+
+
+
+
+$ ->
+  $(".infos-image").height $("#infos").height()
+  $(".infos-image").removeClass "hide"

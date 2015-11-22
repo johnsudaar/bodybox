@@ -85,13 +85,17 @@
   border-radius: 5px;
 }
 
+.photo-plat-small{
+  height: 200px;
+}
+
 .nom-plat {
   text-align: center;
 }
 
 .actions-plats {
   text-align: center;
-} 
+}
 .actions-plats .btn{
   margin-top: 30px;
 }
@@ -104,4 +108,19 @@
   padding-bottom: 1px;
   padding-top: 6px;
   display: none;
+}
+
+.plat{
+  box-shadow: 2px 2px 3px #AAAAAA;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.plat-container{
+  margin: 5px;
+}
+
+.prix{
+  padding-bottom: 3px;
+  background-color: rgba(0,0,0,.05)
 }
