@@ -5,10 +5,10 @@
 
   .row.prix
     .col-md-8.col-xs-12
-      %h3.oswald= "#{@session["nb_meals"]} box de #{@session["box_size"]} g"
+      %h3.oswald= "#{@session["nb_meals"]} boxes de #{@session["box_size"]} g"
     .col-md-4.col-xs-12
       %h3.oswald.pull-right
-        = "#{@total} €"
+        = "#{@total.round(2)} €"
     - @plats.each do | plat |
       .col-md-8.col-xs-12
         %h4.oswald= plat[:plat].nom

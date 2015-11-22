@@ -38,8 +38,8 @@ update_all = (proteines, glucides, legumes, size) ->
   sProteines.noUiSlider.set proteines
 
   $(".toggle-button").bootstrapSwitch
-    onText: "Deux repas"
-    offText: "Trois repas"
+    onText: "Deux boxes"
+    offText: "Trois boxes"
     handleWidth: 100
     wrapperClass: "toggle-button-wrapper"
 
@@ -50,8 +50,8 @@ update_all = (proteines, glucides, legumes, size) ->
 $ ->
   $("#nb-meals-btn").click ->
     $(".toggle-button").bootstrapSwitch
-      onText: "Deux repas"
-      offText: "Trois repas"
+      onText: "Deux boxes"
+      offText: "Trois boxes"
       handleWidth: 100
       wrapperClass: "toggle-button-wrapper"
     sGlucides = document.getElementById('glucides-slider')
