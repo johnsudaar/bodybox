@@ -13,8 +13,10 @@ video {
 }
 
 .boutons {
-	position: relative;
+	position: absolute;
 	float: right;
+  top:10px;
+  right: 10px;
 	margin-top: 10px;
 	margin-right: 10px;
   z-index: 1000;
@@ -28,7 +30,7 @@ video {
 	position: relative;
 	color: white;
 	text-align: center;
-	padding-top: 50px;
+	padding-top: 5px;
 }
 
 .logo {
