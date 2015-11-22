@@ -149,7 +149,7 @@ video {
   font-size: 24px;
 }
 
-.custom-hide{
+.custom-hide {
   zoom: 0;
   opacity: 0;
 }
@@ -157,4 +157,7 @@ video {
 .plat-desc{
   padding-right: 5px;
   padding-left: 5px;
+}
+.btn-success:visited {
+  color: white;
 }
