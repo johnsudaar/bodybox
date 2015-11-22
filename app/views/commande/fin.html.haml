@@ -5,10 +5,17 @@
 
   .row.prix
     .col-md-8.col-xs-12
-      %h3.oswald= "Une box de #{@session["box_size"]} g"
+      %h3.oswald= "#{@session["nb_meals"]} box de #{@session["box_size"]} g"
     .col-md-4.col-xs-12
       %h3.oswald.pull-right
-        5.-- €
+        = "#{@total} €"
+    - @plats.each do | plat |
+      .col-md-8.col-xs-12
+        %h4.oswald= plat[:plat].nom
+      .col-md-4.col-xs-12
+        %h4.oswald.pull-right
+          = "#{plat[:prix]} €"
+
   .row
     .col-md-4.col-xs-12
       %h3= "Sources de protéines : #{@session["proteines_value"]} g"
@@ -26,11 +33,11 @@
     .col-md-6.col-xs-12
       .plat-container
         .row.plat
-          .col-md-5.col-xs-12.photo-plat.photo-plat-small{style:"background-image: url('/plats/#{plat.id}.jpg')"}
-          %h3.text-align-center.oswald=plat.nom
+          .col-md-5.col-xs-12.photo-plat.photo-plat-small{style:"background-image: url('/plats/#{plat[:plat].id}.jpg')"}
+          %h3.text-align-center.oswald=plat[:plat].nom
           .col-md-7.col-xs-12.col-md-offset1
             %h4.oswald Ingredients :
-            - plat.ingredients.each do | ingredient |
+            - plat[:plat].ingredients.each do | ingredient |
               = ingredient.nom
 
   %br
