@@ -1,11 +1,11 @@
 = render :partial => 'nav'
 .container.principal
   = render :partial => 'menu', locals: {:etape => 4}
-  %h1.oswald Recapitulatif de la commande
+  %h1.oswald Récapitulatif de la commande
 
   .row.prix
     .col-md-8.col-xs-12
-      %h3.oswald= "#{@session["nb_meals"]} boxes de #{@session["box_size"]} g"
+      %h3.oswald= "#{@session["nb_meals"]} box de #{@session["box_size"]} g"
     .col-md-4.col-xs-12
       %h3.oswald.pull-right
         = "#{@total.round(2)} €"
@@ -22,7 +22,7 @@
     .col-md-4.col-xs-12
       %h3= "Féculents : #{@session["glucides_value"]} g"
     .col-md-4.col-xs-12
-      %h3= "Legumes : #{@session["legumes_value"]} g"
+      %h3= "Légumes : #{@session["legumes_value"]} g"
   .progress
     .progress-bar.progress-bar-danger#proteines-pb{:style => "width: #{ 100 * @session["proteines_value"].to_i / @session["box_size"].to_i}%"}
     .progress-bar.progress-bar-warning#glucides-pb{:style => "width: #{ 100 * @session["glucides_value"].to_i/ @session["box_size"].to_i}%"}
@@ -34,11 +34,14 @@
       .plat-container
         .row.plat
           .col-md-5.col-xs-12.photo-plat.photo-plat-small{style:"background-image: url('/plats/#{plat[:plat].id}.jpg')"}
-          %h3.text-align-center.oswald=plat[:plat].nom
-          .col-md-7.col-xs-12.col-md-offset1
+          .col-md-7.col-xs-12.col-md-offset1.plat-desc
+            %h3.text-align-center.oswald=plat[:plat].nom
+
             %h4.oswald Ingredients :
+            - first = true
             - plat[:plat].ingredients.each do | ingredient |
-              = ingredient.nom
+              = "• #{ingredient.nom}"
+
 
   %br
   %div.col-md-12
@@ -50,7 +53,7 @@
         .btn.btn-default#btn-relais
           Point relais
         .btn.btn-default#btn-domicile
-          Livraison a domincile
+          Livraison à domicile
 
     #relais
       %br
@@ -64,6 +67,12 @@
             %label
               Prenom :
             %input.form-control{:placeholder => "John", :type => "text"}/
+          .form-group
+            %label
+              Type de repas :
+            %select.form-control#select-relais
+              %option{"value"=>1} Chaud
+              %option{"value"=>2} Froid
           .form-group
             %label
               Point relais :
