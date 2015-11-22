@@ -165,8 +165,10 @@ $ ->
     if ! first
       $("#domicile").slideToggle "slow", ->
         $("#relais").slideToggle "slow", ->
+          $("#map-cont").removeClass "custom-hide", ->
     else
       $("#relais").slideToggle "slow", ->
+        $("#map-cont").removeClass "custom-hide", ->
     $("#btn-relais").addClass "active"
     $("#btn-domicile").removeClass "active"
     first = false
@@ -174,11 +176,12 @@ $ ->
   $("#btn-domicile").click ->
     if ! first
       $("#relais").slideToggle "slow", ->
+        $("#map-cont").addClass "custom-hide", ->
         $("#domicile").slideToggle "slow", ->
     else
       $("#domicile").slideToggle "slow", ->
     $("#btn-domicile").addClass "active"
-    $("#btn-relais").removeClass "active"
+    $("#btn-relais").removeClass "custom-hide"
     first = false
 
 

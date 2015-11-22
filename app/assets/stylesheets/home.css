@@ -148,3 +148,8 @@ video {
 .c-koi {
   font-size: 24px;
 }
+
+.custom-hide{
+  zoom: 0;
+  opacity: 0;
+}
